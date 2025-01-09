@@ -10,87 +10,117 @@
 
     <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
 
     <style>
-      /* Style cho menu */
-      /* Style cho menu */
-      /* Style cho menu */
-      /* Style for the navbar */
-.navbar {
-  background-color: #333;
-  display: flex; /* Use flexbox to make the items appear in a row */
-  justify-content: flex-start; /* Align items to the left */
-  align-items: center; /* Center items vertically */
-  padding: 0; /* Remove padding to avoid extra space around the navbar */
-  # padding-left: 260px; 
-  margin-right: 110px;
-}
+      /* Reset mặc định của HTML */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-.navbar a, .navbar .navbar-link {
-  color: white;
-  text-align: center;
-  padding: 14px 20px; /* This padding is optional, can adjust if necessary */
-  text-decoration: none;
-  margin: 0; /* Remove any margin */
-}
+      /* Bố cục tổng thể của trang */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
 
-.navbar a:hover, .navbar .navbar-link:hover {
-  background-color: #ddd;
-  color: black;
-}
+      main {
+        padding: 20px;
+        max-width: 1200px; /* Giới hạn chiều rộng của nội dung */
+        margin: 0 auto;
+      }
 
-/* Ensure button matches link styles */
-.navbar button.navbar-link {
-  background-color: #333; /* Same as the navbar background */
-  border: none;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-  cursor: pointer;
-}
+      /* Định nghĩa cho phần hình ảnh trên thanh menu */
+      .navbar-image {
+        width: 100%; /* Chiều rộng đầy đủ của trang */
+        height: auto; /* Đảm bảo tỷ lệ hình ảnh không bị méo */
+        display: block; /* Đảm bảo hình ảnh không bị thụt lề */
+      }
 
-.navbar button.navbar-link:hover {
-  background-color: #ddd;
-  color: black;
-}
+      /* Định nghĩa cho navbar */
+      .navbar {
+        background-color: #333;
+        display: flex;
+        justify-content: space-between; /* Điều chỉnh khoảng cách giữa các mục */
+        align-items: center; /* Giữ các mục căn giữa theo chiều dọc */
+        padding: 0 20px;
+        width: 100%; /* Đảm bảo navbar có độ rộng 100% */
+      }
 
-/* Optional: Remove extra space between menu items */
-.navbar {
-  gap: 0; /* Remove space between items */
-}
+      .navbar a, .navbar .navbar-link {
+        color: white;
+        text-decoration: none;
+        padding: 15px 20px;
+        transition: background-color 0.3s;
+      }
 
+      .navbar a:hover, .navbar .navbar-link:hover {
+        background-color: #ddd;
+        color: black;
+      }
 
-      /* Style cho flash messages */
+      .navbar button.navbar-link {
+        background-color: transparent;
+        border: none;
+        color: white;
+        padding: 15px 20px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .navbar button.navbar-link:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      /* Flash messages styling */
+      .flash.notice, .flash.alert {
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid transparent;
+        border-radius: 4px;
+      }
+
       .flash.notice {
         background-color: #dff0d8;
         color: #3c763d;
-        padding: 10px;
-        border: 1px solid #d6e9c6;
-        margin: 10px 0;
+        border-color: #d6e9c6;
       }
 
       .flash.alert {
         background-color: #f2dede;
         color: #a94442;
-        padding: 10px;
-        border: 1px solid #ebccd1;
-        margin: 10px 0;
+        border-color: #ebccd1;
       }
 
+      /* Bố trí responsive cho navbar */
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .navbar a, .navbar button.navbar-link {
+          width: 100%;
+          text-align: left;
+          padding: 10px 20px;
+        }
+      }
     </style>
   </head>
 
   <body>
+    <!-- Hình ảnh nằm trên thanh menu -->
+    <img src="http://shopcanre.com/uploads/plugin/custom_img/2021-10-11/shop-can-re1.jpg" alt="Logo" class="navbar-image">
+
     <!-- Menu -->
     <nav class="navbar">
       <a href="/">Trang chủ</a>

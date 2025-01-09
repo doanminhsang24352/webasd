@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
-      background-image: url('https://png.pngtree.com/png-clipart/20220604/original/pngtree-fish-icon-png-image_7948172.png');
+      background-image: url('https://media.istockphoto.com/id/1146409825/vi/vec-to/minh-h%E1%BB%8Da-c%C3%A1-c%C3%A1-c%C3%A1-c%E1%BA%A3nh-%C4%91%E1%BB%8F.jpg?s=612x612&w=0&k=20&c=_LRHfzYggSj5kce-Zdjo7k91nvy-07u9V1tNg7yDJOo=;');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -40,7 +40,23 @@
     h1 {
       text-align: center;
       margin-top: 20px;
-      margin-left: 20px;
+      font-size: 36px; /* Font size for heading */
+      font-weight: bold; /* Make the font bold */
+      font-style: italic; /* Make the font italic */
+      color: black; /* Text color */
+      background-color: white; /* Background color */
+      display: flex; /* Flexbox layout for icon and text */
+      align-items: center; /* Vertically align icon and text */
+      justify-content: center; /* Center the content */
+      border-radius: 12px; /* Rounded corners for the background */
+      padding: 10px 20px; /* Padding around the content */
+      border: 1px solid #ddd; /* Light border around the heading */
+    }
+
+    h1 img {
+      width: 60px;
+      height: 60px;
+      margin-right: 15px; /* Space between the icon and text */
     }
 
     #product-list {
@@ -53,9 +69,9 @@
     }
 
     .product-card {
-      background-color: #fff; /* Màu nền trắng */
+      background-color: #fff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 30%;
+      width: 24%; /* Adjusted to fit 4 products per row */
       height: auto;
       margin-bottom: 20px;
       padding: 10px;
@@ -63,12 +79,12 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      border: 1px solid #ddd; /* Thêm khung quanh sản phẩm */
-      transition: transform 0.3s ease; /* Hiệu ứng phóng to khi di chuột vào */
+      border: 1px solid #ddd;
+      transition: transform 0.3s ease;
     }
 
     .product-card:hover {
-      transform: scale(1.05); /* Phóng to khi di chuột vào sản phẩm */
+      transform: scale(1.05);
     }
 
     .product-image img {
@@ -79,16 +95,19 @@
     }
 
     .product-name {
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: black; /* Màu chữ đen */
-      transition: color 0.3s ease; /* Hiệu ứng chuyển màu */
-    }
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: black; /* Default text color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
 
-    .product-name:hover {
-      color: red; /* Khi di chuột vào tên sản phẩm, đổi màu chữ thành đỏ */
-    }
+.product-name:hover {
+  color: #007bff; /* Blue color on hover */
+  text-decoration: none; /* Ensure there's no underline on hover */
+}
+
 
     .product-description {
       font-size: 12px;
@@ -136,43 +155,77 @@
     .see-more:hover {
       text-decoration: underline;
     }
-    h1 {
-      color: black; /* Màu chữ đen */
-      background-color: white; /* Màu nền trắng */
-      border: 1px solid #ddd; /* Viền mảnh xung quanh */
-      padding: 10px 20px; /* Thêm khoảng cách cho nút */
-      border-radius: 12px; /* Bo tròn góc */
-      text-decoration: none; /* Loại bỏ gạch chân của link */
-      display: inline-block; /* Đảm bảo link hành động như nút */
-      text-align: center; /* Canh giữa chữ trong nút */
-      transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển màu */
-      font-size: 15px; /* Kích thước chữ 15px */
-    }
-    
-    .button {
-    color: black; /* Màu chữ đen */
-    background-color: white; /* Màu nền trắng */
-    border: 1px solid #ddd; /* Viền mảnh xung quanh */
-    padding: 10px 20px; /* Thêm khoảng cách cho nút */
-    border-radius: 12px; /* Bo tròn góc */
-    text-decoration: none; /* Loại bỏ gạch chân của link */
-    display: inline-block; /* Đảm bảo link hành động như nút */
-    text-align: center; /* Canh giữa chữ trong nút */
-    transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển màu */
-  }
 
-    .button:hover {
-      background-color: #f4f4f4; /* Nền chuyển màu khi hover */
-      color: red; /* Màu chữ chuyển đỏ khi hover */
+    /* Carousel container styling */
+    .carousel {
+      position: relative;
+      width: 80%; /* Make the carousel smaller, e.g., 80% of the screen width */
+      height: 300px; /* Adjust the height of the carousel */
+      margin: 20px auto; /* Center the carousel with auto margins */
+      border: 2px solid #333; /* Add a border around the carousel */
+      border-radius: 10px; /* Add rounded corners */
+      overflow: hidden; /* Ensure images don't overflow the carousel container */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+      background-color: #fff; /* Add a background color */
     }
 
+    /* Styling for carousel images */
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure images cover the container without stretching */
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: opacity 1s ease-in-out; /* Smooth image transition */
+      opacity: 0; /* Start images with 0 opacity */
+    }
 
+    .carousel img.active {
+      opacity: 1; /* Show active image */
+    }
+
+    /* Navigation buttons */
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-size: 20px;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .carousel-button.left {
+      left: 10px;
+    }
+
+    .carousel-button.right {
+      right: 10px;
+    }
   </style>
 </head>
 <body>
 
-  <h1 >Danh sách sản phẩm đồ câu </h1>
+  <h1>
+  
+  Danh sách sản phẩm đồ câu
+</h1>
 
+
+  <!-- Carousel -->
+  <div class="carousel">
+    <img src="https://wwin.vn/wp-content/uploads/2023/06/cach-chon-can-cau-ca-1.png;" class="carousel-image active">
+    <img src="https://i.ytimg.com/vi/etoFcZ1vlJY/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD59Vx6tGjahlfo0ThGXKqDDiCUgA;" class="carousel-image">
+    <img src="https://i.ytimg.com/vi/BzhOLZhqJio/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDu3R2usTu_XhLcb5z2mBoTD0SeFg;" class="carousel-image">
+
+    <!-- Navigation buttons -->
+    <button class="carousel-button left" onclick="prevImage()">❮</button>
+    <button class="carousel-button right" onclick="nextImage()">❯</button>
+  </div>
 
   <div id="product-list">
     <% @products.each do |product| %>
@@ -201,6 +254,32 @@
       </div>
     <% end %>
   </div>
+
+  <script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel-image');
+
+    function showImage(index) {
+      images.forEach((image, i) => {
+        image.classList.remove('active');
+        if (i === index) {
+          image.classList.add('active');
+        }
+      });
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    setInterval(nextImage, 5000);
+  </script>
 
 </body>
 </html>
