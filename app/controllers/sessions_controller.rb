@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
         password: "s3cr3t",
         password_confirmation: "s3cr3t"
       )
+    end
   end
 
   def create
